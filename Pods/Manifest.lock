@@ -1,0 +1,44 @@
+PODS:
+  - Kingfisher (7.8.1)
+  - RxCocoa (6.5.0):
+    - RxRelay (= 6.5.0)
+    - RxSwift (= 6.5.0)
+  - RxGesture (4.0.4):
+    - RxCocoa (~> 6.0)
+    - RxSwift (~> 6.0)
+  - RxRelay (6.5.0):
+    - RxSwift (= 6.5.0)
+  - RxSwift (6.5.0)
+  - SnapKit (5.6.0)
+  - UIColor_Hex_Swift (5.1.9)
+
+DEPENDENCIES:
+  - Kingfisher (= 7.8.1)
+  - RxCocoa (= 6.5.0)
+  - RxGesture (= 4.0.4)
+  - RxSwift (= 6.5.0)
+  - SnapKit (= 5.6.0)
+  - UIColor_Hex_Swift (~> 5.1.9)
+
+SPEC REPOS:
+  trunk:
+    - Kingfisher
+    - RxCocoa
+    - RxGesture
+    - RxRelay
+    - RxSwift
+    - SnapKit
+    - UIColor_Hex_Swift
+
+SPEC CHECKSUMS:
+  Kingfisher: 63f677311d36a3473f6b978584f8a3845d023dc5
+  RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
+  RxGesture: f3efb47ed2d26a8082f7b660d4a59970e275a7f8
+  RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
+  RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
+  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+  UIColor_Hex_Swift: 20cb4e8d51b63e168a9da6933bc5d39cd8fb4ab5
+
+PODFILE CHECKSUM: 50d9b5a60760e976e927995cb89f56d96f7b69c5
+
+COCOAPODS: 1.12.1
