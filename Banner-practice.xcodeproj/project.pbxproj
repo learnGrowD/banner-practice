@@ -8,15 +8,32 @@
 
 /* Begin PBXBuildFile section */
 		6714BC5D5660E1BEE3DB657C /* Pods_Banner_practice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5415054F999987E32F7D655F /* Pods_Banner_practice.framework */; };
+		B83230872AA99ADB0058EFCD /* AnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83230862AA99ADB0058EFCD /* AnimationViewController.swift */; };
+		B832308A2AA99B0B0058EFCD /* AnimationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83230892AA99B0B0058EFCD /* AnimationViewModel.swift */; };
+		B832308D2AA9A3710058EFCD /* AnimateItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B832308C2AA9A3710058EFCD /* AnimateItemTableViewCell.swift */; };
+		B832308F2AA9A3810058EFCD /* AnimateHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B832308E2AA9A3810058EFCD /* AnimateHeaderTableViewCell.swift */; };
+		B84FE2E12AA809A600184D78 /* Rx+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84FE2E02AA809A600184D78 /* Rx+extension.swift */; };
+		B855A1972AA9BA9D00C8AC65 /* UIView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B855A1962AA9BA9D00C8AC65 /* UIView+extension.swift */; };
+		B855A1992AAAE5CA00C8AC65 /* AnimateThumbnailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B855A1982AAAE5CA00C8AC65 /* AnimateThumbnailView.swift */; };
+		B855A19B2AAAEB3200C8AC65 /* AnimateNavigationBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B855A19A2AAAEB3200C8AC65 /* AnimateNavigationBackgroundView.swift */; };
+		B855A19D2AAAED5800C8AC65 /* AnimateTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B855A19C2AAAED5800C8AC65 /* AnimateTableView.swift */; };
 		B862DC8E2AA0688100E3E3BC /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B862DC8D2AA0688100E3E3BC /* MainViewModel.swift */; };
 		B862DC912AA069F800E3E3BC /* MainBannerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B862DC902AA069F800E3E3BC /* MainBannerCollectionViewCell.swift */; };
 		B862DC942AA074D900E3E3BC /* MainBannerItemAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = B862DC932AA074D900E3E3BC /* MainBannerItemAttribute.swift */; };
+		B86855E82AA5B1B2000B65FC /* BaseViewControllerLifeCycleStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86855E72AA5B1B2000B65FC /* BaseViewControllerLifeCycleStatus.swift */; };
+		B86855EB2AA6ACDF000B65FC /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86855EA2AA6ACDF000B65FC /* SplashViewController.swift */; };
+		B86855ED2AA6ACFE000B65FC /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86855EC2AA6ACFE000B65FC /* SplashViewModel.swift */; };
+		B86855EF2AA6F321000B65FC /* BaseViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86855EE2AA6F321000B65FC /* BaseViewControllerProtocol.swift */; };
+		B86855F32AA6F394000B65FC /* BaseBottomModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86855F22AA6F394000B65FC /* BaseBottomModal.swift */; };
+		B86855F62AA6F755000B65FC /* MyBottomModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86855F52AA6F755000B65FC /* MyBottomModal.swift */; };
+		B86855F82AA6F77C000B65FC /* MyBottomModalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86855F72AA6F77C000B65FC /* MyBottomModalViewModel.swift */; };
 		B88427942AA15EFE00C6345F /* UIViewController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88427932AA15EFE00C6345F /* UIViewController+extension.swift */; };
 		B88427972AA1726800C6345F /* UIIconImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88427962AA1726800C6345F /* UIIconImageView.swift */; };
 		B884279E2AA17FE300C6345F /* MainRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B884279D2AA17FE300C6345F /* MainRepository.swift */; };
 		B88427A12AA19CD600C6345F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88427A02AA19CD600C6345F /* BaseViewController.swift */; };
 		B88427A32AA19CE800C6345F /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88427A22AA19CE800C6345F /* BaseViewModel.swift */; };
 		B88427A72AA1B73900C6345F /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88427A62AA1B73900C6345F /* TestViewController.swift */; };
+		B8A7980E2AA886D100C59C93 /* MainNavigationItemContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A7980D2AA886D100C59C93 /* MainNavigationItemContainer.swift */; };
 		B8BA394C2AA064B400F4B4F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BA394B2AA064B400F4B4F9 /* AppDelegate.swift */; };
 		B8BA394E2AA064B400F4B4F9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BA394D2AA064B400F4B4F9 /* SceneDelegate.swift */; };
 		B8BA39552AA064B500F4B4F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8BA39542AA064B500F4B4F9 /* Assets.xcassets */; };
@@ -27,15 +44,32 @@
 /* Begin PBXFileReference section */
 		1A6927098710DE4EC253854A /* Pods-Banner-practice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Banner-practice.release.xcconfig"; path = "Target Support Files/Pods-Banner-practice/Pods-Banner-practice.release.xcconfig"; sourceTree = "<group>"; };
 		5415054F999987E32F7D655F /* Pods_Banner_practice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Banner_practice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B83230862AA99ADB0058EFCD /* AnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationViewController.swift; sourceTree = "<group>"; };
+		B83230892AA99B0B0058EFCD /* AnimationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationViewModel.swift; sourceTree = "<group>"; };
+		B832308C2AA9A3710058EFCD /* AnimateItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateItemTableViewCell.swift; sourceTree = "<group>"; };
+		B832308E2AA9A3810058EFCD /* AnimateHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		B84FE2E02AA809A600184D78 /* Rx+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rx+extension.swift"; sourceTree = "<group>"; };
+		B855A1962AA9BA9D00C8AC65 /* UIView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+extension.swift"; sourceTree = "<group>"; };
+		B855A1982AAAE5CA00C8AC65 /* AnimateThumbnailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateThumbnailView.swift; sourceTree = "<group>"; };
+		B855A19A2AAAEB3200C8AC65 /* AnimateNavigationBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateNavigationBackgroundView.swift; sourceTree = "<group>"; };
+		B855A19C2AAAED5800C8AC65 /* AnimateTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateTableView.swift; sourceTree = "<group>"; };
 		B862DC8D2AA0688100E3E3BC /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		B862DC902AA069F800E3E3BC /* MainBannerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBannerCollectionViewCell.swift; sourceTree = "<group>"; };
 		B862DC932AA074D900E3E3BC /* MainBannerItemAttribute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBannerItemAttribute.swift; sourceTree = "<group>"; };
+		B86855E72AA5B1B2000B65FC /* BaseViewControllerLifeCycleStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewControllerLifeCycleStatus.swift; sourceTree = "<group>"; };
+		B86855EA2AA6ACDF000B65FC /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		B86855EC2AA6ACFE000B65FC /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
+		B86855EE2AA6F321000B65FC /* BaseViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewControllerProtocol.swift; sourceTree = "<group>"; };
+		B86855F22AA6F394000B65FC /* BaseBottomModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseBottomModal.swift; sourceTree = "<group>"; };
+		B86855F52AA6F755000B65FC /* MyBottomModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBottomModal.swift; sourceTree = "<group>"; };
+		B86855F72AA6F77C000B65FC /* MyBottomModalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBottomModalViewModel.swift; sourceTree = "<group>"; };
 		B88427932AA15EFE00C6345F /* UIViewController+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+extension.swift"; sourceTree = "<group>"; };
 		B88427962AA1726800C6345F /* UIIconImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIIconImageView.swift; sourceTree = "<group>"; };
 		B884279D2AA17FE300C6345F /* MainRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRepository.swift; sourceTree = "<group>"; };
 		B88427A02AA19CD600C6345F /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		B88427A22AA19CE800C6345F /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		B88427A62AA1B73900C6345F /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		B8A7980D2AA886D100C59C93 /* MainNavigationItemContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationItemContainer.swift; sourceTree = "<group>"; };
 		B8BA39482AA064B400F4B4F9 /* Banner-practice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Banner-practice.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8BA394B2AA064B400F4B4F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8BA394D2AA064B400F4B4F9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,10 +109,65 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		B83230882AA99AF60058EFCD /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				B83230862AA99ADB0058EFCD /* AnimationViewController.swift */,
+				B83230892AA99B0B0058EFCD /* AnimationViewModel.swift */,
+				B832308B2AA9A35E0058EFCD /* Component */,
+			);
+			path = Animation;
+			sourceTree = "<group>";
+		};
+		B832308B2AA9A35E0058EFCD /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				B855A1A02AAAEF1000C8AC65 /* Table */,
+				B855A19F2AAAEF0900C8AC65 /* Thumbnail */,
+				B855A19E2AAAEF0200C8AC65 /* NavigationBackground */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		B855A19E2AAAEF0200C8AC65 /* NavigationBackground */ = {
+			isa = PBXGroup;
+			children = (
+				B855A19A2AAAEB3200C8AC65 /* AnimateNavigationBackgroundView.swift */,
+			);
+			path = NavigationBackground;
+			sourceTree = "<group>";
+		};
+		B855A19F2AAAEF0900C8AC65 /* Thumbnail */ = {
+			isa = PBXGroup;
+			children = (
+				B855A1982AAAE5CA00C8AC65 /* AnimateThumbnailView.swift */,
+			);
+			path = Thumbnail;
+			sourceTree = "<group>";
+		};
+		B855A1A02AAAEF1000C8AC65 /* Table */ = {
+			isa = PBXGroup;
+			children = (
+				B855A19C2AAAED5800C8AC65 /* AnimateTableView.swift */,
+				B855A1A12AAAEF1500C8AC65 /* Component */,
+			);
+			path = Table;
+			sourceTree = "<group>";
+		};
+		B855A1A12AAAEF1500C8AC65 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				B832308C2AA9A3710058EFCD /* AnimateItemTableViewCell.swift */,
+				B832308E2AA9A3810058EFCD /* AnimateHeaderTableViewCell.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
 		B862DC8F2AA069E000E3E3BC /* Component */ = {
 			isa = PBXGroup;
 			children = (
 				B862DC902AA069F800E3E3BC /* MainBannerCollectionViewCell.swift */,
+				B8A7980D2AA886D100C59C93 /* MainNavigationItemContainer.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -91,10 +180,63 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		B86855E52AA5B17A000B65FC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B86855E62AA5B17E000B65FC /* Enums */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B86855E62AA5B17E000B65FC /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				B86855E72AA5B1B2000B65FC /* BaseViewControllerLifeCycleStatus.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		B86855E92AA5D5EC000B65FC /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				B86855EA2AA6ACDF000B65FC /* SplashViewController.swift */,
+				B86855EC2AA6ACFE000B65FC /* SplashViewModel.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		B86855F02AA6F368000B65FC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B88427A02AA19CD600C6345F /* BaseViewController.swift */,
+				B86855F22AA6F394000B65FC /* BaseBottomModal.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B86855F12AA6F374000B65FC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B88427A22AA19CE800C6345F /* BaseViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		B86855F42AA6F742000B65FC /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				B86855F52AA6F755000B65FC /* MyBottomModal.swift */,
+				B86855F72AA6F77C000B65FC /* MyBottomModalViewModel.swift */,
+			);
+			name = Modal;
+			sourceTree = "<group>";
+		};
 		B88427902AA1504700C6345F /* Extension */ = {
 			isa = PBXGroup;
 			children = (
 				B88427932AA15EFE00C6345F /* UIViewController+extension.swift */,
+				B84FE2E02AA809A600184D78 /* Rx+extension.swift */,
+				B855A1962AA9BA9D00C8AC65 /* UIView+extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -118,8 +260,10 @@
 		B884279F2AA19CC900C6345F /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				B88427A02AA19CD600C6345F /* BaseViewController.swift */,
-				B88427A22AA19CE800C6345F /* BaseViewModel.swift */,
+				B86855EE2AA6F321000B65FC /* BaseViewControllerProtocol.swift */,
+				B86855E52AA5B17A000B65FC /* Model */,
+				B86855F02AA6F368000B65FC /* View */,
+				B86855F12AA6F374000B65FC /* ViewModel */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -158,6 +302,9 @@
 		B8BA39612AA064FF00F4B4F9 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				B83230882AA99AF60058EFCD /* Animation */,
+				B86855F42AA6F742000B65FC /* Modal */,
+				B86855E92AA5D5EC000B65FC /* Splash */,
 				B8BA39632AA0654A00F4B4F9 /* Main */,
 			);
 			path = Feature;
@@ -301,18 +448,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B86855F82AA6F77C000B65FC /* MyBottomModalViewModel.swift in Sources */,
+				B86855F62AA6F755000B65FC /* MyBottomModal.swift in Sources */,
+				B86855ED2AA6ACFE000B65FC /* SplashViewModel.swift in Sources */,
 				B862DC942AA074D900E3E3BC /* MainBannerItemAttribute.swift in Sources */,
+				B855A1972AA9BA9D00C8AC65 /* UIView+extension.swift in Sources */,
 				B88427A32AA19CE800C6345F /* BaseViewModel.swift in Sources */,
 				B862DC912AA069F800E3E3BC /* MainBannerCollectionViewCell.swift in Sources */,
 				B88427972AA1726800C6345F /* UIIconImageView.swift in Sources */,
 				B8BA39602AA064FB00F4B4F9 /* MainViewController.swift in Sources */,
+				B832308A2AA99B0B0058EFCD /* AnimationViewModel.swift in Sources */,
+				B86855EB2AA6ACDF000B65FC /* SplashViewController.swift in Sources */,
+				B832308F2AA9A3810058EFCD /* AnimateHeaderTableViewCell.swift in Sources */,
+				B832308D2AA9A3710058EFCD /* AnimateItemTableViewCell.swift in Sources */,
+				B855A19D2AAAED5800C8AC65 /* AnimateTableView.swift in Sources */,
 				B8BA394C2AA064B400F4B4F9 /* AppDelegate.swift in Sources */,
 				B88427A12AA19CD600C6345F /* BaseViewController.swift in Sources */,
 				B8BA394E2AA064B400F4B4F9 /* SceneDelegate.swift in Sources */,
 				B884279E2AA17FE300C6345F /* MainRepository.swift in Sources */,
+				B83230872AA99ADB0058EFCD /* AnimationViewController.swift in Sources */,
 				B88427942AA15EFE00C6345F /* UIViewController+extension.swift in Sources */,
 				B88427A72AA1B73900C6345F /* TestViewController.swift in Sources */,
+				B86855E82AA5B1B2000B65FC /* BaseViewControllerLifeCycleStatus.swift in Sources */,
+				B86855F32AA6F394000B65FC /* BaseBottomModal.swift in Sources */,
+				B855A19B2AAAEB3200C8AC65 /* AnimateNavigationBackgroundView.swift in Sources */,
+				B855A1992AAAE5CA00C8AC65 /* AnimateThumbnailView.swift in Sources */,
+				B8A7980E2AA886D100C59C93 /* MainNavigationItemContainer.swift in Sources */,
+				B86855EF2AA6F321000B65FC /* BaseViewControllerProtocol.swift in Sources */,
 				B862DC8E2AA0688100E3E3BC /* MainViewModel.swift in Sources */,
+				B84FE2E12AA809A600184D78 /* Rx+extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

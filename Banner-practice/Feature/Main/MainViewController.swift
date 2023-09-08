@@ -12,45 +12,53 @@ import RxGesture
 import SnapKit
 
 final class MainViewController: BaseViewController<MainViewModel> {
-    private let navigationSettingButton = UIIconImageView()
-    private let navigationAlarmButton = UIIconImageView()
-    private let navigationPhotoButton = UIIconImageView()
-
+    private lazy var navigationContainer = MainNavigationItemContainer(navigationItem: navigationItem, viewModel: viewModel)
     private let bannerFlowLayout = UICollectionViewFlowLayout()
     private lazy var bannerCollectionView = UICollectionView(frame: .zero, collectionViewLayout: bannerFlowLayout)
     private let pageControll = UIPageControl()
 
-    // MARK: - Logic
-    override func bindToView() {
-        super.bindToView()
-        navigationSettingButton.rx.tapGesture()
-            .when(.recognized)
-            .bind(onNext: { _ in
-                print("🧊 SettingButton Tap")
-            })
-            .disposed(by: disposeBag)
-
-        navigationAlarmButton.rx.tapGesture()
-            .when(.recognized)
-            .bind(onNext: { _ in
-                print("🧊 Alarm Button Tap")
-            })
-            .disposed(by: disposeBag)
-        navigationPhotoButton.rx.tapGesture()
-            .when(.recognized)
-            .bind(onNext: { _ in
-                print("🧊 Photo Button Tap")
-            })
-            .disposed(by: disposeBag)
+    override func bindToView(_ viewModel: MainViewModel) {
+        super.bindToView(viewModel)
     }
 
     override func bindToViewModel(_ viewModel: MainViewModel) {
         super.bindToViewModel(viewModel)
-        viewModel.bannerList
-            .filter { !$0.isEmpty }
+        viewModel.requestApiWithNavigationSettingButtonTap()
+            .emit(onNext: { [weak self] _ in
+                self?.tapSettingNavigationButton()
+            })
+            .disposed(by: disposeBag)
+        viewModel.requestApiWithNavigationAlarmButtonTap()
+            .emit(onNext: { [weak self] _ in
+                self?.tapAlarmNavigationButton()
+            })
+            .disposed(by: disposeBag)
+        viewModel.requestApiWithNavigationPhotoButtonTap()
+            .emit(onNext: { [weak self] _ in
+                self?.tapPhotoNavigationButton()
+            })
+            .disposed(by: disposeBag)
+
+        viewModel.getBannerList()
+            .bind(to: bannerCollectionView.rx.items) { [weak self] collectionView, row, data in
+                guard let self = self else { return UICollectionViewCell() }
+                return self.createBannerCell(collectionView: collectionView, row: row, data: data)
+            }
+            .disposed(by: disposeBag)
+
+        viewModel.getPageControllNumberOfPages()
+            .bind(to: pageControll.rx.numberOfPages)
+            .disposed(by: disposeBag)
+
+        bannerCollectionView.rx.didScroll
             .bind(onNext: { [weak self] in
-                self?.pageControll.numberOfPages = $0.count - 2
-                self?.bannerCollectionView.reloadData()
+                self?.didScroll()
+            })
+            .disposed(by: disposeBag)
+
+        bannerCollectionView.rx.didEndDecelerating
+            .bind(onNext: { [weak self] in
+                self?.infiniteScroll()
             })
             .disposed(by: disposeBag)
     }
@@ -58,18 +66,6 @@ final class MainViewController: BaseViewController<MainViewModel> {
     // MARK: - View Support
     override func attribute() {
         super.attribute()
-        navigationSettingButton.setImage(systemName: "bolt.fill")
-        navigationAlarmButton.setImage(systemName: "bolt.fill")
-        navigationPhotoButton.setImage(systemName: "bolt.fill")
-
-        let navigationSpacing = makeNavigationItemSpacing(offset: 16)
-        navigationItem.rightBarButtonItems = [
-            UIBarButtonItem(customView: navigationSettingButton),
-            navigationSpacing,
-            UIBarButtonItem(customView: navigationAlarmButton),
-            navigationSpacing,
-            UIBarButtonItem(customView: navigationPhotoButton)
-        ]
 
         bannerFlowLayout.scrollDirection = .horizontal
         bannerFlowLayout.minimumLineSpacing = 0
@@ -78,10 +74,6 @@ final class MainViewController: BaseViewController<MainViewModel> {
         let height: CGFloat = 416
         bannerFlowLayout.itemSize = .init(width: width, height: height)
 
-        bannerCollectionView.rx.setDelegate(self)
-            .disposed(by: disposeBag)
-        bannerCollectionView.rx.setDataSource(self)
-            .disposed(by: disposeBag)
         bannerCollectionView.showsHorizontalScrollIndicator = false
         bannerCollectionView.contentInsetAdjustmentBehavior = .never
         bannerCollectionView.isPagingEnabled = true
@@ -95,16 +87,6 @@ final class MainViewController: BaseViewController<MainViewModel> {
     }
     override func layout() {
         super.layout()
-        navigationSettingButton.snp.makeConstraints {
-            $0.size.equalTo(44)
-        }
-        navigationAlarmButton.snp.makeConstraints {
-            $0.size.equalTo(44)
-        }
-        navigationPhotoButton.snp.makeConstraints {
-            $0.size.equalTo(44)
-        }
-
         [
             bannerCollectionView,
             pageControll
@@ -121,51 +103,64 @@ final class MainViewController: BaseViewController<MainViewModel> {
             $0.centerX.equalToSuperview()
         }
     }
+}
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+// MARK: - Life Cycle
+extension MainViewController {
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         bannerCollectionView.scrollToItem(at: [0, 1], at: .left, animated: false)
     }
 }
+// MARK: - Logic
+extension MainViewController {
+    func tapSettingNavigationButton() {
+        print("🧊 tapSettingNavigationButton")
+    }
 
-//MARK: - DataSource, Delegate
-extension MainViewController: UICollectionViewDataSource, UICollectionViewDelegate {
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return viewModel.numberOfSection()
+    func tapAlarmNavigationButton() {
+        print("🧊 tapAlarmNavigationButton")
     }
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.numberOfItemsInSection()
+
+    func tapPhotoNavigationButton() {
+        print("🧊 tapPhotoNavigationButton")
     }
-    func collectionView(
-        _ collectionView: UICollectionView,
-        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-            guard let cell = collectionView.dequeueReusableCell(
-                withReuseIdentifier: String(describing: MainBannerCollectionViewCell.self),
-                for: indexPath) as? MainBannerCollectionViewCell else {
-                return UICollectionViewCell()
-            }
-            cell.setUI(viewModel.getBannerData(indexPath: indexPath))
-            cell.bind(viewModel)
-            return cell
+
+    func createBannerCell(
+        collectionView: UICollectionView,
+        row: Int,
+        data: MainBannerItemAttribute) -> UICollectionViewCell {
+        let indexPath = IndexPath(row: row, section: 0)
+        guard let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: String(describing: MainBannerCollectionViewCell.self),
+            for: indexPath) as? MainBannerCollectionViewCell else {
+            return UICollectionViewCell()
         }
+        cell.setUI(data)
+        cell.bind(viewModel)
+        return cell
+    }
 
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if scrollView.frame.size.width != 0 {
-            let value = (scrollView.contentOffset.x / scrollView.frame.width)
+    func didScroll() {
+        if bannerCollectionView.frame.size.width != 0 {
+            let value = (bannerCollectionView.contentOffset.x / bannerCollectionView.frame.width)
             pageControll.currentPage = Int(round(value)) - 1
-            print("🧊 row: \(Int(round(value)))")
         }
     }
 
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        let value = (scrollView.contentOffset.x / scrollView.frame.width)
-        let last = viewModel.bannerList.value.count - 2
+    func infiniteScroll() {
+        let value = (bannerCollectionView.contentOffset.x / bannerCollectionView.frame.width)
+        let last = viewModel.getPrimitiveBannerList().count - 2
         switch Int(round(value)) {
         case 0:
             bannerCollectionView.scrollToItem(at: [0, last], at: .left, animated: false)
-        case viewModel.bannerList.value.count - 1:
+        case viewModel.getPrimitiveBannerList().count - 1:
             bannerCollectionView.scrollToItem(at: [0, 1], at: .left, animated: false)
         default: break
         }
     }
 }
+
+//collectionView
+//tableview
+//

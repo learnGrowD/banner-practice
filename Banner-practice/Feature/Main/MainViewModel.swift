@@ -13,7 +13,11 @@ import RxCocoa
 //View를 생성할때 ViewModel을 멤버로 가진다.
 //View가 소멸하면 ViewModel도 메모리에서 사라진다.
 class MainViewModel: BaseViewModel {
-    let bannerList = BehaviorRelay<[MainBannerItemAttribute]>(value: [])
+    private let bannerList = BehaviorRelay<[MainBannerItemAttribute]>(value: [])
+
+    let navigationSettingButtonTap = PublishRelay<UITapGestureRecognizer>()
+    let navigationAlarmButtonTap = PublishRelay<UITapGestureRecognizer>()
+    let navigationPhotoButtonTap = PublishRelay<UITapGestureRecognizer>()
 
     init(repository: MainRepository = MainRepository()) {
         super.init()
@@ -22,17 +26,33 @@ class MainViewModel: BaseViewModel {
             .bind(to: bannerList)
             .disposed(by: disposeBag)
     }
-    //MARK: - CollectionView
-    func numberOfSection() -> Int {
-        return 1
-    }
-
-    func numberOfItemsInSection() -> Int {
     
-        return bannerList.value.count
+    func getPrimitiveBannerList() -> [MainBannerItemAttribute] {
+        bannerList.value
     }
 
-    func getBannerData(indexPath: IndexPath) -> MainBannerItemAttribute {
-        return bannerList.value[indexPath.row]
+    func getPageControllNumberOfPages() -> Observable<Int> {
+        bannerList
+            .map { $0.count - 2 }
+    }
+
+    func getBannerList() -> Observable<[MainBannerItemAttribute]> {
+        bannerList
+            .asObservable()
+    }
+
+    func requestApiWithNavigationSettingButtonTap() -> Signal<UITapGestureRecognizer> {
+        navigationSettingButtonTap
+            .asSignal(onErrorSignalWith: .empty())
+    }
+
+    func requestApiWithNavigationAlarmButtonTap() -> Signal<UITapGestureRecognizer> {
+        navigationAlarmButtonTap
+            .asSignal(onErrorSignalWith: .empty())
+    }
+
+    func requestApiWithNavigationPhotoButtonTap() -> Signal<UITapGestureRecognizer> {
+        navigationPhotoButtonTap
+            .asSignal(onErrorSignalWith: .empty())
     }
 }

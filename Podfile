@@ -12,4 +12,5 @@ target 'Banner-practice' do
     pod 'Kingfisher', '7.8.1'
     pod 'SnapKit', '5.6.0'
     pod 'UIColor_Hex_Swift', '~> 5.1.9'
+    pod 'PanModal', '1.2.7'
 end

@@ -9,47 +9,6 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-protocol BaseViewControllerProtocol: UIViewController {
-    associatedtype ViewModel: BaseViewModel
-    var viewModel: ViewModel { get set }
-    func bindToView()
-    func bindToViewModel(_ viewModel: ViewModel)
-    func attribute()
-    func layout()
-}
-extension BaseViewControllerProtocol {
-    var className: String {
-        String(describing: type(of: self))
-    }
-
-    func mInit() {
-        attribute()
-        print("🍎 init: \(className)")
-    }
-
-    func mViewDidLoad() {
-        layout()
-        bindToView()
-        bindToViewModel(viewModel)
-        print("🍎 viewDidLoad: \(className)")
-    }
-    func mViewWillAppear(_ animated: Bool) {
-        print("🍎 viewWillAppear: \(className)")
-    }
-    func mViewDidAppear(_ animated: Bool) {
-        print("🍎 viewDidAppear: \(className)")
-    }
-    func mViewWillDisappear(_ animated: Bool) {
-        print("🍎 viewWillDisappear: \(className)")
-    }
-    func mViewDidDisappear(_ animated: Bool) {
-        print("🍎 viewDidDisappear: \(className)")
-    }
-    func mDeinit() {
-        print("🍎 ViewController deinit: \(className)")
-    }
-}
-
 class BaseViewController<ViewModel: BaseViewModel>: UIViewController, BaseViewControllerProtocol {
     typealias ViewModel = ViewModel
 
@@ -67,7 +26,7 @@ class BaseViewController<ViewModel: BaseViewModel>: UIViewController, BaseViewCo
         fatalError("init(coder:) has not been implemented")
     }
 
-    func bindToView() {}
+    func bindToView(_ viewModel: ViewModel) {}
 
     func bindToViewModel(_ viewModel: ViewModel) {}
 
@@ -78,6 +37,14 @@ class BaseViewController<ViewModel: BaseViewModel>: UIViewController, BaseViewCo
     override func viewDidLoad() {
         super.viewDidLoad()
         self.mViewDidLoad()
+    }
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        self.mViewWillLayoutSubviews()
+    }
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.mViewDidLayoutSubviews()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

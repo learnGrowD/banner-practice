@@ -53,8 +53,10 @@ class MainRepository {
         ])
         .map {
             var result = $0
-            result.insert(result[result.count - 1], at: 0)
-            result.append(result[1])
+            let first = result[result.count - 1]
+            let last = result[0]
+            result.insert(first, at: 0)
+            result.append(last)
             return result
         }
     }
