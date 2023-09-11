@@ -148,7 +148,7 @@ private final class CenterCommonToast: CommonToast {
 
         let imageHeight: CGFloat = 56
         let messageHeight: CGFloat = messageLabel.intrinsicContentSize.height
-        let height = imageHeight + messageHeight
+        let height = 16 + imageHeight + messageHeight + 16 + 16
 
         return CGSize(width: width, height: height)
     }
@@ -164,6 +164,8 @@ private final class CenterCommonToast: CommonToast {
         super.attribute()
         backgroundColor = .systemGray
         messageLabel.numberOfLines = 0
+        imageView.clipsToBounds = true
+        imageView.layer.cornerRadius = 28
         imageView.kf.setImage(with: URL(string: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRHIv7WPWnOqjiHtk-2_Vm34hus7ceXLqeh6Cjw0LdoA&s"))
     }
     override func layout() {
@@ -175,7 +177,7 @@ private final class CenterCommonToast: CommonToast {
             $0.centerX.equalToSuperview()
         }
         messageLabel.snp.makeConstraints {
-            $0.top.equalTo(imageView.snp.bottom).offset(8)
+            $0.top.equalTo(imageView.snp.bottom).offset(16)
             $0.centerX.equalToSuperview()
         }
     }

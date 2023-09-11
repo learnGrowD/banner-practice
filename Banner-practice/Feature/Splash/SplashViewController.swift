@@ -20,7 +20,7 @@ final class SplashViewController: BaseViewController<SplashViewModel> {
                     .setOnClickDelegate { _ in
                         print("이거는 가능한건지!!")
                     }
-                    .build(status: .bottom)
+                    .build(status: .top)
                     .show()
 //                let animateViewModel = AnimationViewModel()
 //                let animateViewController = AnimationViewController(viewModel: animateViewModel)
