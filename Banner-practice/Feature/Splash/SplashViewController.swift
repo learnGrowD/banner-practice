@@ -5,6 +5,7 @@
 //  Created by 도학태 on 2023/09/05.
 //
 import UIKit
+import Lottie
 
 final class SplashViewController: BaseViewController<SplashViewModel> {
 
@@ -27,7 +28,6 @@ final class SplashViewController: BaseViewController<SplashViewModel> {
 //                self?.navigationController?.pushViewController(animateViewController, animated: true)
             })
             .disposed(by: disposeBag)
-
     }
 
     override func attribute() {

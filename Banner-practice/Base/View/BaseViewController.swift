@@ -37,6 +37,7 @@ class BaseViewController<ViewModel: BaseViewModel>: UIViewController, BaseViewCo
     override func viewDidLoad() {
         super.viewDidLoad()
         self.mViewDidLoad()
+        
     }
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()

@@ -14,4 +14,7 @@ target 'Banner-practice' do
     pod 'UIColor_Hex_Swift', '~> 5.1.9'
     pod 'PanModal', '1.2.7'
     pod 'Toast-Swift', '~> 5.0.1'
+
+    pod 'lottie-ios', '4.1.2'
+    pod 'R.swift', '7.3.0'
 end

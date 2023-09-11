@@ -1,6 +1,8 @@
 PODS:
   - Kingfisher (7.8.1)
+  - lottie-ios (4.1.2)
   - PanModal (1.2.7)
+  - R.swift (7.3.0)
   - RxCocoa (6.5.0):
     - RxRelay (= 6.5.0)
     - RxSwift (= 6.5.0)
@@ -16,7 +18,9 @@ PODS:
 
 DEPENDENCIES:
   - Kingfisher (= 7.8.1)
+  - lottie-ios (= 4.1.2)
   - PanModal (= 1.2.7)
+  - R.swift (= 7.3.0)
   - RxCocoa (= 6.5.0)
   - RxGesture (= 4.0.4)
   - RxSwift (= 6.5.0)
@@ -27,7 +31,9 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Kingfisher
+    - lottie-ios
     - PanModal
+    - R.swift
     - RxCocoa
     - RxGesture
     - RxRelay
@@ -38,7 +44,9 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Kingfisher: 63f677311d36a3473f6b978584f8a3845d023dc5
+  lottie-ios: b3846a9fa8ca1a1a3bebfa256ebe8b6fd4aaaaad
   PanModal: 3e16ead1a907fb06f4df3f13492fd00149fa4974
+  R.swift: cef1c530541cb49412752721797f10dae6b32d11
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
   RxGesture: f3efb47ed2d26a8082f7b660d4a59970e275a7f8
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
@@ -47,6 +55,6 @@ SPEC CHECKSUMS:
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
   UIColor_Hex_Swift: 20cb4e8d51b63e168a9da6933bc5d39cd8fb4ab5
 
-PODFILE CHECKSUM: 295668e62c253fe323a02cd84aece9aa245e57e0
+PODFILE CHECKSUM: 90562aa26fd91f1e471ad392780876b00950a1a6
 
 COCOAPODS: 1.12.1
