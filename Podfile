@@ -13,4 +13,5 @@ target 'Banner-practice' do
     pod 'SnapKit', '5.6.0'
     pod 'UIColor_Hex_Swift', '~> 5.1.9'
     pod 'PanModal', '1.2.7'
+    pod 'Toast-Swift', '~> 5.0.1'
 end

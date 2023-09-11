@@ -14,11 +14,17 @@ final class SplashViewController: BaseViewController<SplashViewModel> {
         super.bindToView(viewModel)
         button.rx.tapGesture()
             .when(.recognized)
-            .bind(onNext: { [weak self] _ in
-                let animateViewModel = AnimationViewModel()
-                let animateViewController = AnimationViewController(viewModel: animateViewModel)
-                self?.navigationController?.pushViewController(animateViewController, animated: true
-                )
+            .bind(onNext: { _ in
+                CommonToast.Builder()
+                    .setMessage(message: "HELLO")
+                    .setOnClickDelegate { _ in
+                        print("이거는 가능한건지!!")
+                    }
+                    .build(status: .bottom)
+                    .show()
+//                let animateViewModel = AnimationViewModel()
+//                let animateViewController = AnimationViewController(viewModel: animateViewModel)
+//                self?.navigationController?.pushViewController(animateViewController, animated: true)
             })
             .disposed(by: disposeBag)
 

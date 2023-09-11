@@ -68,3 +68,52 @@ extension BaseViewControllerProtocol {
         print("🍎 ViewController deinit: \(className)")
     }
 }
+
+protocol Storage {}
+extension Storage {
+    var rootViewController: UIViewController? {
+        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.window?.rootViewController
+    }
+
+    var topMostViewController: UIViewController? {
+        var topMostViewController = self.rootViewController
+
+        while let presentedViewController = topMostViewController?.presentedViewController {
+            topMostViewController = presentedViewController
+        }
+
+        while let parentViewController = topMostViewController?.parent {
+            if parentViewController is UINavigationController {
+                topMostViewController = parentViewController
+            }
+
+            if let presentedViewController = parentViewController.presentedViewController,
+                        presentedViewController != topMostViewController {
+                topMostViewController = presentedViewController
+            }
+        }
+        return (topMostViewController?.isViewLoaded == true && topMostViewController?.view.window != nil) ? topMostViewController : nil
+    }
+
+    var depthViewController: UIViewController? {
+        var depthViewController = self.topMostViewController
+
+        /*
+         TabBar
+         */
+        if let tabBarController = depthViewController as? UITabBarController {
+            depthViewController = tabBarController.selectedViewController
+        }
+
+        /*
+         Navigation
+         */
+        if let navigationController = depthViewController as? UINavigationController {
+            depthViewController = navigationController.visibleViewController
+        }
+        return (depthViewController?.isViewLoaded == true && depthViewController?.view.window != nil) ? depthViewController : nil
+    }
+}
+
+extension UIViewController: Storage {}
+extension UIView: Storage {}
