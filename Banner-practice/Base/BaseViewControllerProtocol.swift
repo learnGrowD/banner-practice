@@ -61,7 +61,6 @@ extension BaseViewControllerProtocol {
     }
     func mViewDidDisappear(_ animated: Bool) {
         viewModel.lifeCycleStatus.accept(.viewDidDisAppear)
-        R
         print("🍎 viewDidDisappear: \(className)")
     }
     func mDeinit() {

@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct Lottie {
+struct LottieResourceStorage {
     static let defaultLoading = "defaultLoading"
 }

@@ -32,6 +32,7 @@
 		B87EF2262AAEEE28002C65A6 /* NotoSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B87EF2232AAEEC80002C65A6 /* NotoSans-Regular.ttf */; };
 		B87EF2282AAEEF32002C65A6 /* defaultLoading.json in Resources */ = {isa = PBXBuildFile; fileRef = B87EF2272AAEEF32002C65A6 /* defaultLoading.json */; };
 		B87EF22C2AAEF08C002C65A6 /* Lottie.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87EF22B2AAEF08C002C65A6 /* Lottie.swift */; };
+		B87EF22E2AAEF2D0002C65A6 /* CommonLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87EF22D2AAEF2D0002C65A6 /* CommonLoadingView.swift */; };
 		B88427942AA15EFE00C6345F /* UIViewController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88427932AA15EFE00C6345F /* UIViewController+extension.swift */; };
 		B88427972AA1726800C6345F /* UIIconImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88427962AA1726800C6345F /* UIIconImageView.swift */; };
 		B884279E2AA17FE300C6345F /* MainRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B884279D2AA17FE300C6345F /* MainRepository.swift */; };
@@ -73,6 +74,7 @@
 		B87EF2242AAEEC80002C65A6 /* NotoSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NotoSans-SemiBold.ttf"; path = "../../../../../../ios-native-tory/IOS-Native-Together/Utils/Resource/Font/NotoSans-SemiBold.ttf"; sourceTree = "<group>"; };
 		B87EF2272AAEEF32002C65A6 /* defaultLoading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = defaultLoading.json; sourceTree = "<group>"; };
 		B87EF22B2AAEF08C002C65A6 /* Lottie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lottie.swift; sourceTree = "<group>"; };
+		B87EF22D2AAEF2D0002C65A6 /* CommonLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonLoadingView.swift; sourceTree = "<group>"; };
 		B88427932AA15EFE00C6345F /* UIViewController+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+extension.swift"; sourceTree = "<group>"; };
 		B88427962AA1726800C6345F /* UIIconImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIIconImageView.swift; sourceTree = "<group>"; };
 		B884279D2AA17FE300C6345F /* MainRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRepository.swift; sourceTree = "<group>"; };
@@ -277,6 +279,7 @@
 			children = (
 				B88427962AA1726800C6345F /* UIIconImageView.swift */,
 				B88AD6B62AAE9CFD008C5C16 /* CommonToast.swift */,
+				B87EF22D2AAEF2D0002C65A6 /* CommonLoadingView.swift */,
 			);
 			path = CustomUI;
 			sourceTree = "<group>";
@@ -517,6 +520,7 @@
 				B86855F82AA6F77C000B65FC /* MyBottomModalViewModel.swift in Sources */,
 				B86855F62AA6F755000B65FC /* MyBottomModal.swift in Sources */,
 				B87EF21F2AAEEC24002C65A6 /* R.generated.swift in Sources */,
+				B87EF22E2AAEF2D0002C65A6 /* CommonLoadingView.swift in Sources */,
 				B86855ED2AA6ACFE000B65FC /* SplashViewModel.swift in Sources */,
 				B862DC942AA074D900E3E3BC /* MainBannerItemAttribute.swift in Sources */,
 				B855A1972AA9BA9D00C8AC65 /* UIView+extension.swift in Sources */,
