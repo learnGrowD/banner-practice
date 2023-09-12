@@ -128,8 +128,8 @@ struct _R {
     /// Resource file `NotoSans-SemiBold.ttf`.
     var notoSansSemiBoldTtf: RswiftResources.FileResource { .init(name: "NotoSans-SemiBold", pathExtension: "ttf", bundle: bundle, locale: LocaleReference.none) }
 
-    /// Resource file `animation_lmeismhr.json`.
-    var animation_lmeismhrJson: RswiftResources.FileResource { .init(name: "animation_lmeismhr", pathExtension: "json", bundle: bundle, locale: LocaleReference.none) }
+    /// Resource file `defaultLoading.json`.
+    var defaultLoadingJson: RswiftResources.FileResource { .init(name: "defaultLoading", pathExtension: "json", bundle: bundle, locale: LocaleReference.none) }
   }
 
   /// This `_R.storyboard` struct is generated, and contains static references to 1 storyboards.

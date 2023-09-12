@@ -38,7 +38,6 @@
 		B884279E2AA17FE300C6345F /* MainRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B884279D2AA17FE300C6345F /* MainRepository.swift */; };
 		B88427A12AA19CD600C6345F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88427A02AA19CD600C6345F /* BaseViewController.swift */; };
 		B88427A32AA19CE800C6345F /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88427A22AA19CE800C6345F /* BaseViewModel.swift */; };
-		B88427A72AA1B73900C6345F /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88427A62AA1B73900C6345F /* TestViewController.swift */; };
 		B88AD6B72AAE9CFD008C5C16 /* CommonToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88AD6B62AAE9CFD008C5C16 /* CommonToast.swift */; };
 		B8A7980E2AA886D100C59C93 /* MainNavigationItemContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A7980D2AA886D100C59C93 /* MainNavigationItemContainer.swift */; };
 		B8BA394C2AA064B400F4B4F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BA394B2AA064B400F4B4F9 /* AppDelegate.swift */; };
@@ -80,7 +79,6 @@
 		B884279D2AA17FE300C6345F /* MainRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRepository.swift; sourceTree = "<group>"; };
 		B88427A02AA19CD600C6345F /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		B88427A22AA19CE800C6345F /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
-		B88427A62AA1B73900C6345F /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		B88AD6B62AAE9CFD008C5C16 /* CommonToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonToast.swift; sourceTree = "<group>"; };
 		B8A7980D2AA886D100C59C93 /* MainNavigationItemContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationItemContainer.swift; sourceTree = "<group>"; };
 		B8BA39482AA064B400F4B4F9 /* Banner-practice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Banner-practice.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -329,7 +327,6 @@
 				B88427902AA1504700C6345F /* Extension */,
 				B8BA39612AA064FF00F4B4F9 /* Feature */,
 				B8BA39622AA0651C00F4B4F9 /* Support */,
-				B88427A62AA1B73900C6345F /* TestViewController.swift */,
 			);
 			path = "Banner-practice";
 			sourceTree = "<group>";
@@ -539,7 +536,6 @@
 				B884279E2AA17FE300C6345F /* MainRepository.swift in Sources */,
 				B83230872AA99ADB0058EFCD /* AnimationViewController.swift in Sources */,
 				B88427942AA15EFE00C6345F /* UIViewController+extension.swift in Sources */,
-				B88427A72AA1B73900C6345F /* TestViewController.swift in Sources */,
 				B86855E82AA5B1B2000B65FC /* BaseViewControllerLifeCycleStatus.swift in Sources */,
 				B86855F32AA6F394000B65FC /* BaseBottomModal.swift in Sources */,
 				B87EF22C2AAEF08C002C65A6 /* Lottie.swift in Sources */,

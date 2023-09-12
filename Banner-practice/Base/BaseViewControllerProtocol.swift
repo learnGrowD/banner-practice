@@ -71,8 +71,16 @@ extension BaseViewControllerProtocol {
 
 protocol Storage {}
 extension Storage {
+    private var sceneDelegate: SceneDelegate? {
+        UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate
+    }
+
+    var window: UIWindow? {
+        sceneDelegate?.window
+    }
+
     var rootViewController: UIViewController? {
-        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.window?.rootViewController
+        window?.rootViewController
     }
 
     var topMostViewController: UIViewController? {

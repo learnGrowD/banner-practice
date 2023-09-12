@@ -6,10 +6,13 @@
 //
 import UIKit
 import Lottie
+import RxSwift
+import RxCocoa
 
 final class SplashViewController: BaseViewController<SplashViewModel> {
 
     let button = UILabel()
+    var loadingView: CommonLoadingView?
 
     override func bindToView(_ viewModel: SplashViewModel) {
         super.bindToView(viewModel)
@@ -28,6 +31,13 @@ final class SplashViewController: BaseViewController<SplashViewModel> {
 //                self?.navigationController?.pushViewController(animateViewController, animated: true)
             })
             .disposed(by: disposeBag)
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        loadingView = CommonLoadingView()
+        loadingView?.show()
     }
 
     override func attribute() {
