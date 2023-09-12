@@ -15,7 +15,7 @@ import RxCocoa
 //2. 특정 시간 UserInteraction 해제
 //3. -> UserInteraction 해제 했을때 페이지 나가면 loadingView 없애기?
 //*** time out 이랑 충돌이....
-class CommonLoadingView: Storage {
+final class CommonLoadingView: Storage {
     private var disposeBag: DisposeBag? = DisposeBag()
     private var loadingView: LottieAnimationView? = LottieAnimationView(name: LottieResourceStorage.defaultLoading)
     private var milliseconds = 0

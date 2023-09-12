@@ -11,46 +11,56 @@ import RxCocoa
 
 final class SplashViewController: BaseViewController<SplashViewModel> {
 
-    let button = UILabel()
+//    let button = UILabel()
     var loadingView: CommonLoadingView?
+
+    let list = BehaviorRelay<[String]>(value: [""])
+    lazy var emptyView = CommonEmptyView<[String]>(list: list.asObservable())
 
     override func bindToView(_ viewModel: SplashViewModel) {
         super.bindToView(viewModel)
-        button.rx.tapGesture()
-            .when(.recognized)
-            .bind(onNext: { _ in
-                CommonToast.Builder()
-                    .setMessage(message: "HELLO")
-                    .setOnClickDelegate { _ in
-                        print("이거는 가능한건지!!")
-                    }
-                    .build(status: .top)
-                    .show()
-//                let animateViewModel = AnimationViewModel()
-//                let animateViewController = AnimationViewController(viewModel: animateViewModel)
-//                self?.navigationController?.pushViewController(animateViewController, animated: true)
-            })
-            .disposed(by: disposeBag)
+//        button.rx.tapGesture()
+//            .when(.recognized)
+//            .bind(onNext: { _ in
+//                CommonToast.Builder()
+//                    .setMessage(message: "HELLO")
+//                    .setOnClickDelegate { _ in
+//                        print("이거는 가능한건지!!")
+//                    }
+//                    .build(status: .top)
+//                    .show()
+////                let animateViewModel = AnimationViewModel()
+////                let animateViewController = AnimationViewController(viewModel: animateViewModel)
+////                self?.navigationController?.pushViewController(animateViewController, animated: true)
+//            })
+//            .disposed(by: disposeBag)
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        loadingView = CommonLoadingView()
-        loadingView?.show()
+//        loadingView = CommonLoadingView()
+//        loadingView?.show()
     }
 
     override func attribute() {
         super.attribute()
         view.backgroundColor = .white
-        button.text = "화면전환"
+//        button.text = "화면전환"
+        emptyView.setEmptyName(name: "이것이 empty다")
     }
 
     override func layout() {
         super.layout()
-        view.addSubview(button)
-        button.snp.makeConstraints {
+//        view.addSubview(button)
+        view.addSubview(emptyView)
+//        button.snp.makeConstraints {
+//            $0.center.equalToSuperview()
+//        }
+
+        emptyView.snp.makeConstraints {
             $0.center.equalToSuperview()
         }
+
     }
 }
