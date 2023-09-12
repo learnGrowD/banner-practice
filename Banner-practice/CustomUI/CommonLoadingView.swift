@@ -10,12 +10,8 @@ import Lottie
 import RxSwift
 import RxCocoa
 
-//reqeust
-//1. 특정 시간 loaidngView show
-//2. 특정 시간 UserInteraction 해제
-//3. -> UserInteraction 해제 했을때 페이지 나가면 loadingView 없애기?
-//*** time out 이랑 충돌이....
-final class CommonLoadingView: Storage {
+//Request ...
+final class CommonLoadingView: EntroViewProtocol, Storage {
     private var disposeBag: DisposeBag? = DisposeBag()
     private var loadingView: LottieAnimationView? = LottieAnimationView(name: LottieResourceStorage.defaultLoading)
     private var milliseconds = 0
@@ -32,10 +28,14 @@ final class CommonLoadingView: Storage {
 
     func show() {
         blockTouch()
+
+        loadingView?.isHidden = false
+        UIView.animate(withDuration: 0.8, animations: { [weak self] in
+            self?.loadingView?.alpha = 1
+        })
         
         guard let disposeBag = disposeBag else { return }
         Observable<Int>.interval(.microseconds(milliseconds), scheduler: MainScheduler.instance)
-            .debug()
             .bind(onNext: { [weak self] in
                 guard let self = self else { return }
                 if $0 == 0 {
@@ -47,18 +47,23 @@ final class CommonLoadingView: Storage {
             .disposed(by: disposeBag)
     }
 
-    func dissmiss() {
+    func dismiss() {
         allowTouch()
 
         disposeBag = nil
 
-        loadingView?.isHidden = true
-        loadingView?.stop()
-        loadingView?.removeFromSuperview()
-        loadingView = nil
+        UIView.animate(withDuration: 0.2, animations: { [weak self] in
+            self?.loadingView?.alpha = 0
+        }, completion: { [weak self] _ in
+            self?.loadingView?.isHidden = true
+            self?.loadingView?.stop()
+            self?.loadingView?.removeFromSuperview()
+            self?.loadingView = nil
+        })
     }
 
     private func attribute() {
+        loadingView?.alpha = 0
         loadingView?.isHidden = true
         loadingView?.contentMode = .scaleAspectFill
         loadingView?.loopMode = .loop

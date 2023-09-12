@@ -1,0 +1,93 @@
+//
+//  CommonBlurView.swift
+//  Banner-practice
+//
+//  Created by 도학태 on 2023/09/12.
+//
+
+import UIKit
+import Lottie
+import RxSwift
+import RxCocoa
+
+protocol EntroViewProtocol {
+    func show()
+    func dismiss()
+}
+
+final class CommonBlurView: UIView, EntroViewProtocol {
+    private var disposeBag: DisposeBag? = DisposeBag()
+    private var commonLoadingView: CommonLoadingView?
+    private var seconds = 2
+
+    init(frame: CGRect = .zero, seconds: Int = 2) {
+        self.seconds = seconds
+        super.init(frame: frame)
+        attribute()
+        layout()
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+
+    func show() {
+        blockTouch()
+
+        isHidden = false
+        guard let disposeBag = disposeBag else { return }
+        Observable<Int>.interval(.seconds(3), scheduler: MainScheduler.instance)
+            .debug()
+            .bind(onNext: { [weak self] in
+                if $0 == 0 {
+                    self?.commonLoadingView = CommonLoadingView(milliseconds: 0)
+                    self?.commonLoadingView?.show()
+                }
+            })
+            .disposed(by: disposeBag)
+    }
+
+    func dismiss() {
+        allowTouch()
+
+        guard let disposeBag = disposeBag else { return }
+        Observable<Int>.interval(.microseconds(800), scheduler: MainScheduler.instance)
+            .bind(onNext: { [weak self] in
+                if $0 == 0 {
+                    self?.disposeBag = nil
+                    self?.commonLoadingView?.dismiss()
+                    UIView.animate(withDuration: 0.2, animations: {
+                        self?.alpha = 0
+                    }, completion: { _ in
+                        self?.isHidden = true
+                    })
+                }
+            })
+            .disposed(by: disposeBag)
+    }
+
+    private func attribute() {
+        isHidden = true
+        backgroundColor = .systemGray3
+    }
+
+    private func layout() {
+        let superView = topMostViewController?.view
+        guard let superView = superView else { return }
+        superView.addSubview(self)
+        snp.makeConstraints {
+            $0.top.equalTo(superView.safeAreaLayoutGuide)
+            $0.leading.trailing.equalToSuperview()
+            $0.bottom.equalToSuperview()
+        }
+    }
+
+    private func blockTouch() {
+        window?.isUserInteractionEnabled = false
+    }
+
+    private func allowTouch() {
+        window?.isUserInteractionEnabled = true
+    }
+}

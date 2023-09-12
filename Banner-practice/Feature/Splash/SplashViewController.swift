@@ -12,7 +12,7 @@ import RxCocoa
 final class SplashViewController: BaseViewController<SplashViewModel> {
 
 //    let button = UILabel()
-    var loadingView: CommonLoadingView?
+    var loadingView: EntroViewProtocol?
 
     let list = BehaviorRelay<[String]>(value: [""])
     lazy var emptyView = CommonEmptyView<[String]>(list: list.asObservable())
@@ -34,13 +34,18 @@ final class SplashViewController: BaseViewController<SplashViewModel> {
 ////                self?.navigationController?.pushViewController(animateViewController, animated: true)
 //            })
 //            .disposed(by: disposeBag)
+        Observable<Int>.interval(.seconds(2), scheduler: MainScheduler.instance)
+            .bind(onNext: { [weak self] _ in
+                self?.loadingView?.dismiss()
+            })
+            .disposed(by: disposeBag)
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-//        loadingView = CommonLoadingView()
-//        loadingView?.show()
+        loadingView = CommonBlurView()
+        loadingView?.show()
     }
 
     override func attribute() {
