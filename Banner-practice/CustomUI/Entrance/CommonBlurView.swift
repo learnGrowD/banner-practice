@@ -10,11 +10,6 @@ import Lottie
 import RxSwift
 import RxCocoa
 
-protocol EntroViewProtocol {
-    func show()
-    func dismiss()
-}
-
 final class CommonBlurView: UIView, EntroViewProtocol {
     private var disposeBag: DisposeBag? = DisposeBag()
     private var commonLoadingView: CommonLoadingView?
@@ -31,13 +26,12 @@ final class CommonBlurView: UIView, EntroViewProtocol {
         fatalError("init(coder:) has not been implemented")
     }
 
-
     func show() {
         blockTouch()
 
         isHidden = false
         guard let disposeBag = disposeBag else { return }
-        Observable<Int>.interval(.seconds(3), scheduler: MainScheduler.instance)
+        Observable<Int>.interval(.milliseconds(1300), scheduler: MainScheduler.instance)
             .debug()
             .bind(onNext: { [weak self] in
                 if $0 == 0 {
@@ -52,7 +46,7 @@ final class CommonBlurView: UIView, EntroViewProtocol {
         allowTouch()
 
         guard let disposeBag = disposeBag else { return }
-        Observable<Int>.interval(.microseconds(800), scheduler: MainScheduler.instance)
+        Observable<Int>.interval(.microseconds(300), scheduler: MainScheduler.instance)
             .bind(onNext: { [weak self] in
                 if $0 == 0 {
                     self?.disposeBag = nil
@@ -69,15 +63,15 @@ final class CommonBlurView: UIView, EntroViewProtocol {
 
     private func attribute() {
         isHidden = true
-        backgroundColor = .systemGray3
+        backgroundColor = UIColor("#212121")
     }
 
     private func layout() {
-        let superView = topMostViewController?.view
+        let superView = depthViewController?.view
         guard let superView = superView else { return }
         superView.addSubview(self)
         snp.makeConstraints {
-            $0.top.equalTo(superView.safeAreaLayoutGuide)
+            $0.top.equalToSuperview()
             $0.leading.trailing.equalToSuperview()
             $0.bottom.equalToSuperview()
         }

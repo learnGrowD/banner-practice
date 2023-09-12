@@ -100,7 +100,8 @@ extension Storage {
                 topMostViewController = presentedViewController
             }
         }
-        return (topMostViewController?.isViewLoaded == true && topMostViewController?.view.window != nil) ? topMostViewController : nil
+
+        return topMostViewController
     }
 
     var depthViewController: UIViewController? {
@@ -119,7 +120,7 @@ extension Storage {
         if let navigationController = depthViewController as? UINavigationController {
             depthViewController = navigationController.visibleViewController
         }
-        return (depthViewController?.isViewLoaded == true && depthViewController?.view.window != nil) ? depthViewController : nil
+        return depthViewController
     }
 }
 

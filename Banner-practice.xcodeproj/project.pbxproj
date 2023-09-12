@@ -42,6 +42,9 @@
 		B8A7980E2AA886D100C59C93 /* MainNavigationItemContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A7980D2AA886D100C59C93 /* MainNavigationItemContainer.swift */; };
 		B8AE12722AAFFC5E0074298E /* CommonEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AE12712AAFFC5E0074298E /* CommonEmptyView.swift */; };
 		B8AE12742AB002B80074298E /* CommonBlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AE12732AB002B80074298E /* CommonBlurView.swift */; };
+		B8AE12772AB025E70074298E /* EntranceViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AE12762AB025E70074298E /* EntranceViewProtocol.swift */; };
+		B8AE127B2AB041A70074298E /* CommonRetryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AE127A2AB041A70074298E /* CommonRetryView.swift */; };
+		B8AE127D2AB06A0A0074298E /* RetryEnableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AE127C2AB06A0A0074298E /* RetryEnableProtocol.swift */; };
 		B8BA394C2AA064B400F4B4F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BA394B2AA064B400F4B4F9 /* AppDelegate.swift */; };
 		B8BA394E2AA064B400F4B4F9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8BA394D2AA064B400F4B4F9 /* SceneDelegate.swift */; };
 		B8BA39552AA064B500F4B4F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8BA39542AA064B500F4B4F9 /* Assets.xcassets */; };
@@ -85,6 +88,9 @@
 		B8A7980D2AA886D100C59C93 /* MainNavigationItemContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationItemContainer.swift; sourceTree = "<group>"; };
 		B8AE12712AAFFC5E0074298E /* CommonEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonEmptyView.swift; sourceTree = "<group>"; };
 		B8AE12732AB002B80074298E /* CommonBlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonBlurView.swift; sourceTree = "<group>"; };
+		B8AE12762AB025E70074298E /* EntranceViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntranceViewProtocol.swift; sourceTree = "<group>"; };
+		B8AE127A2AB041A70074298E /* CommonRetryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonRetryView.swift; sourceTree = "<group>"; };
+		B8AE127C2AB06A0A0074298E /* RetryEnableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetryEnableProtocol.swift; sourceTree = "<group>"; };
 		B8BA39482AA064B400F4B4F9 /* Banner-practice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Banner-practice.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8BA394B2AA064B400F4B4F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8BA394D2AA064B400F4B4F9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -279,11 +285,12 @@
 		B88427952AA1725700C6345F /* CustomUI */ = {
 			isa = PBXGroup;
 			children = (
+				B8AE12752AB025DA0074298E /* Entrance */,
 				B88427962AA1726800C6345F /* UIIconImageView.swift */,
 				B88AD6B62AAE9CFD008C5C16 /* CommonToast.swift */,
-				B87EF22D2AAEF2D0002C65A6 /* CommonLoadingView.swift */,
 				B8AE12712AAFFC5E0074298E /* CommonEmptyView.swift */,
-				B8AE12732AB002B80074298E /* CommonBlurView.swift */,
+				B8AE127A2AB041A70074298E /* CommonRetryView.swift */,
+				B8AE127C2AB06A0A0074298E /* RetryEnableProtocol.swift */,
 			);
 			path = CustomUI;
 			sourceTree = "<group>";
@@ -305,6 +312,16 @@
 				B86855F12AA6F374000B65FC /* ViewModel */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		B8AE12752AB025DA0074298E /* Entrance */ = {
+			isa = PBXGroup;
+			children = (
+				B87EF22D2AAEF2D0002C65A6 /* CommonLoadingView.swift */,
+				B8AE12732AB002B80074298E /* CommonBlurView.swift */,
+				B8AE12762AB025E70074298E /* EntranceViewProtocol.swift */,
+			);
+			path = Entrance;
 			sourceTree = "<group>";
 		};
 		B8BA393F2AA064B400F4B4F9 = {
@@ -535,12 +552,14 @@
 				B832308A2AA99B0B0058EFCD /* AnimationViewModel.swift in Sources */,
 				B86855EB2AA6ACDF000B65FC /* SplashViewController.swift in Sources */,
 				B8AE12742AB002B80074298E /* CommonBlurView.swift in Sources */,
+				B8AE12772AB025E70074298E /* EntranceViewProtocol.swift in Sources */,
 				B832308F2AA9A3810058EFCD /* AnimateHeaderTableViewCell.swift in Sources */,
 				B832308D2AA9A3710058EFCD /* AnimateItemTableViewCell.swift in Sources */,
 				B855A19D2AAAED5800C8AC65 /* AnimateTableView.swift in Sources */,
 				B8BA394C2AA064B400F4B4F9 /* AppDelegate.swift in Sources */,
 				B88427A12AA19CD600C6345F /* BaseViewController.swift in Sources */,
 				B8BA394E2AA064B400F4B4F9 /* SceneDelegate.swift in Sources */,
+				B8AE127B2AB041A70074298E /* CommonRetryView.swift in Sources */,
 				B884279E2AA17FE300C6345F /* MainRepository.swift in Sources */,
 				B83230872AA99ADB0058EFCD /* AnimationViewController.swift in Sources */,
 				B88427942AA15EFE00C6345F /* UIViewController+extension.swift in Sources */,
@@ -553,6 +572,7 @@
 				B86855EF2AA6F321000B65FC /* BaseViewControllerProtocol.swift in Sources */,
 				B862DC8E2AA0688100E3E3BC /* MainViewModel.swift in Sources */,
 				B88AD6B72AAE9CFD008C5C16 /* CommonToast.swift in Sources */,
+				B8AE127D2AB06A0A0074298E /* RetryEnableProtocol.swift in Sources */,
 				B84FE2E12AA809A600184D78 /* Rx+extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

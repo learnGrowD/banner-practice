@@ -15,14 +15,32 @@ final class AnimationViewController: BaseViewController<AnimationViewModel> {
     private lazy var thumbnailView = AnimateThumbnailView(viewModel: viewModel)
     private lazy var animateTxableView = AnimateTableView(viewModel: viewModel)
 
+    private var test: EntroViewProtocol?
+
     override func bindToViewModel(_ viewModel: AnimationViewModel) {
         super.bindToViewModel(viewModel)
-
+        
         viewModel.getTableViewContentsOffsetY()
             .emit(onNext: { [weak self] _ in
 
             })
             .disposed(by: disposeBag)
+
+//        Observable<Int>.interval(.milliseconds(1000), scheduler: MainScheduler.instance)
+//            .bind(onNext: { [weak self] _ in
+//                self?.test?.dismiss()
+//            })
+//            .disposed(by: disposeBag)
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        print("vewijweiofwe \(String(describing: depthViewController.self))")
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("vewijweiofwe \(String(describing: depthViewController.self))")
     }
 
     override func attribute() {
