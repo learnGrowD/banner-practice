@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 
 //Request ...
-final class CommonLoadingView: EntroViewProtocol, Storage {
+final class CommonLoadingView: EntroViewProtocol, StorageProtocol {
     private var disposeBag: DisposeBag? = DisposeBag()
     private var loadingView: LottieAnimationView? = LottieAnimationView(name: LottieResourceStorage.defaultLoading)
     private var milliseconds = 0

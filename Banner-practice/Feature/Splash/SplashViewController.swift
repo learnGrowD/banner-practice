@@ -9,6 +9,8 @@ import Lottie
 import RxSwift
 import RxCocoa
 
+
+
 final class SplashViewController: BaseViewController<SplashViewModel>, RetryEnabledProtocol {
     func processRetry() {
         print("이것이 Retry다!!")
@@ -44,12 +46,15 @@ final class SplashViewController: BaseViewController<SplashViewModel>, RetryEnab
 //            .disposed(by: disposeBag)
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        print("🧊 Splash viewDidLoad" + String(describing: continerViewController))
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("🧊 Splash viewWillAppear" + String(describing: continerViewController))
+
     }
 
     override func attribute() {

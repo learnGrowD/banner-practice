@@ -28,7 +28,8 @@ final class CommonRetryView: UIView {
     }
 
     private func layout() {
-        guard let retryViewController = depthViewController as? UIViewController & RetryEnabledProtocol else { return }
+        let continerViewController = continerViewController
+        guard let retryViewController = continerViewController as? UIViewController & RetryEnabledProtocol else { return }
         let superView = retryViewController.retryContainerView
 
         superView.addSubview(self)
@@ -73,7 +74,8 @@ final class CommonRetryView: UIView {
             retryButton.rx.tapGesture()
                 .when(.recognized)
                 .bind(onNext: { [weak self] _ in
-                    guard let retryViewController = self?.depthViewController as? UIViewController & RetryEnabledProtocol else { return }
+                    let continerViewController = self?.continerViewController
+                    guard let retryViewController = continerViewController as? UIViewController & RetryEnabledProtocol else { return }
                     retryViewController.processRetry()
 
                     self?.removeFromSuperview()

@@ -32,7 +32,6 @@ final class CommonBlurView: UIView, EntroViewProtocol {
         isHidden = false
         guard let disposeBag = disposeBag else { return }
         Observable<Int>.interval(.milliseconds(1300), scheduler: MainScheduler.instance)
-            .debug()
             .bind(onNext: { [weak self] in
                 if $0 == 0 {
                     self?.commonLoadingView = CommonLoadingView(milliseconds: 0)
@@ -67,6 +66,7 @@ final class CommonBlurView: UIView, EntroViewProtocol {
     }
 
     private func layout() {
+        let depthViewController = depthViewController
         let superView = depthViewController?.view
         guard let superView = superView else { return }
         superView.addSubview(self)

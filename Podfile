@@ -17,4 +17,5 @@ target 'Banner-practice' do
 
     pod 'lottie-ios', '4.1.2'
     pod 'R.swift', '7.3.0'
+    pod 'XLPagerTabStrip', '9.0.0'
 end

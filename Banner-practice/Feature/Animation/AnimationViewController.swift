@@ -21,26 +21,26 @@ final class AnimationViewController: BaseViewController<AnimationViewModel> {
         super.bindToViewModel(viewModel)
         
         viewModel.getTableViewContentsOffsetY()
-            .emit(onNext: { [weak self] _ in
-
-            })
+            .emit()
             .disposed(by: disposeBag)
 
-//        Observable<Int>.interval(.milliseconds(1000), scheduler: MainScheduler.instance)
-//            .bind(onNext: { [weak self] _ in
-//                self?.test?.dismiss()
-//            })
-//            .disposed(by: disposeBag)
+        Observable<Int>.interval(.milliseconds(300), scheduler: MainScheduler.instance)
+            .bind(onNext: { [weak self] _ in
+                self?.test?.dismiss()
+            })
+            .disposed(by: disposeBag)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("vewijweiofwe \(String(describing: depthViewController.self))")
+        print("🧊 Animate ViewDidLoad" + String(describing: continerViewController))
+        test = CommonBlurView()
+        test?.show()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print("vewijweiofwe \(String(describing: depthViewController.self))")
+        print("🧊 Animate viewWillAppear" + String(describing: continerViewController))
     }
 
     override func attribute() {

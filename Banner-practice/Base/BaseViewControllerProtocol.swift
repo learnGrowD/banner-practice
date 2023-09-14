@@ -8,6 +8,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import XLPagerTabStrip
 
 /*
  BaseViewControllerProtocol만 상속 받으면 된다.
@@ -33,6 +34,11 @@ extension BaseViewControllerProtocol {
     }
 
     func mViewDidLoad() {
+        /*
+         judgeViewController 넣어주기
+         */
+        commonRepository.judgeViewController.accept(self)
+
         layout()
         bindToView(viewModel)
         bindToViewModel(viewModel)
@@ -41,6 +47,10 @@ extension BaseViewControllerProtocol {
     }
     func mViewWillAppear(_ animated: Bool) {
         viewModel.lifeCycleStatus.accept(.viewWillAppear)
+        /*
+         judgeViewController 넣어주기
+         */
+        commonRepository.judgeViewController.accept(self)
         print("🍎 viewWillAppear: \(className)")
     }
     func mViewDidAppear(_ animated: Bool) {
@@ -56,6 +66,10 @@ extension BaseViewControllerProtocol {
         print("🍎 viewDidLayoutSubviews: \(className)")
     }
     func mViewWillDisappear(_ animated: Bool) {
+        /*
+         judgeViewController 해제
+         */
+        commonRepository.judgeViewController.accept(nil)
         viewModel.lifeCycleStatus.accept(.viewWillDisAppear)
         print("🍎 viewWillDisappear: \(className)")
     }
@@ -68,61 +82,3 @@ extension BaseViewControllerProtocol {
         print("🍎 ViewController deinit: \(className)")
     }
 }
-
-protocol Storage {}
-extension Storage {
-    private var sceneDelegate: SceneDelegate? {
-        UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate
-    }
-
-    var window: UIWindow? {
-        sceneDelegate?.window
-    }
-
-    var rootViewController: UIViewController? {
-        window?.rootViewController
-    }
-
-    var topMostViewController: UIViewController? {
-        var topMostViewController = self.rootViewController
-
-        while let presentedViewController = topMostViewController?.presentedViewController {
-            topMostViewController = presentedViewController
-        }
-
-        while let parentViewController = topMostViewController?.parent {
-            if parentViewController is UINavigationController {
-                topMostViewController = parentViewController
-            }
-
-            if let presentedViewController = parentViewController.presentedViewController,
-                        presentedViewController != topMostViewController {
-                topMostViewController = presentedViewController
-            }
-        }
-
-        return topMostViewController
-    }
-
-    var depthViewController: UIViewController? {
-        var depthViewController = self.topMostViewController
-
-        /*
-         TabBar
-         */
-        if let tabBarController = depthViewController as? UITabBarController {
-            depthViewController = tabBarController.selectedViewController
-        }
-
-        /*
-         Navigation
-         */
-        if let navigationController = depthViewController as? UINavigationController {
-            depthViewController = navigationController.visibleViewController
-        }
-        return depthViewController
-    }
-}
-
-extension UIViewController: Storage {}
-extension UIView: Storage {}
