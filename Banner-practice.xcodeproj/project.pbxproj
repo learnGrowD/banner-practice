@@ -42,8 +42,6 @@
 		B86855EB2AA6ACDF000B65FC /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86855EA2AA6ACDF000B65FC /* SplashViewController.swift */; };
 		B86855ED2AA6ACFE000B65FC /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86855EC2AA6ACFE000B65FC /* SplashViewModel.swift */; };
 		B86855EF2AA6F321000B65FC /* BaseViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86855EE2AA6F321000B65FC /* BaseViewControllerProtocol.swift */; };
-		B86855F62AA6F755000B65FC /* MyBottomModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86855F52AA6F755000B65FC /* MyBottomModal.swift */; };
-		B86855F82AA6F77C000B65FC /* MyBottomModalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86855F72AA6F77C000B65FC /* MyBottomModalViewModel.swift */; };
 		B87EF21F2AAEEC24002C65A6 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87EF21E2AAEEC24002C65A6 /* R.generated.swift */; };
 		B87EF2252AAEEE25002C65A6 /* NotoSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B87EF2242AAEEC80002C65A6 /* NotoSans-SemiBold.ttf */; };
 		B87EF2262AAEEE28002C65A6 /* NotoSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B87EF2232AAEEC80002C65A6 /* NotoSans-Regular.ttf */; };
@@ -106,8 +104,6 @@
 		B86855EA2AA6ACDF000B65FC /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		B86855EC2AA6ACFE000B65FC /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		B86855EE2AA6F321000B65FC /* BaseViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewControllerProtocol.swift; sourceTree = "<group>"; };
-		B86855F52AA6F755000B65FC /* MyBottomModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBottomModal.swift; sourceTree = "<group>"; };
-		B86855F72AA6F77C000B65FC /* MyBottomModalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBottomModalViewModel.swift; sourceTree = "<group>"; };
 		B87EF21E2AAEEC24002C65A6 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		B87EF2232AAEEC80002C65A6 /* NotoSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NotoSans-Regular.ttf"; path = "../../../../../../ios-native-tory/IOS-Native-Together/Utils/Resource/Font/NotoSans-Regular.ttf"; sourceTree = "<group>"; };
 		B87EF2242AAEEC80002C65A6 /* NotoSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NotoSans-SemiBold.ttf"; path = "../../../../../../ios-native-tory/IOS-Native-Together/Utils/Resource/Font/NotoSans-SemiBold.ttf"; sourceTree = "<group>"; };
@@ -363,15 +359,6 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		B86855F42AA6F742000B65FC /* Modal */ = {
-			isa = PBXGroup;
-			children = (
-				B86855F52AA6F755000B65FC /* MyBottomModal.swift */,
-				B86855F72AA6F77C000B65FC /* MyBottomModalViewModel.swift */,
-			);
-			name = Modal;
-			sourceTree = "<group>";
-		};
 		B87EF2202AAEEC61002C65A6 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
@@ -488,7 +475,6 @@
 			children = (
 				B85A8B272AB2BE8F00A6D50F /* Test */,
 				B83230882AA99AF60058EFCD /* Animation */,
-				B86855F42AA6F742000B65FC /* Modal */,
 				B86855E92AA5D5EC000B65FC /* Splash */,
 				B8BA39632AA0654A00F4B4F9 /* Main */,
 			);
@@ -669,8 +655,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8AE12722AAFFC5E0074298E /* CommonEmptyView.swift in Sources */,
-				B86855F82AA6F77C000B65FC /* MyBottomModalViewModel.swift in Sources */,
-				B86855F62AA6F755000B65FC /* MyBottomModal.swift in Sources */,
 				B87EF21F2AAEEC24002C65A6 /* R.generated.swift in Sources */,
 				B826A4292AB439FF00B85DF5 /* CommonPanModal.swift in Sources */,
 				B87EF22E2AAEF2D0002C65A6 /* CommonLoadingView.swift in Sources */,

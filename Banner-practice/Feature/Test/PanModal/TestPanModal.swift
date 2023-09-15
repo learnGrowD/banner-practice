@@ -9,35 +9,60 @@ import UIKit
 import PanModal
 import UIKit
 
-final class TestNavigationPanModal: UINavigationController, BasePanModalPresentable {
+final class TestPanModal: BaseNavigationViewController<BaseViewModel>, BasePanModalPresentable {
     var panScrollable: UIScrollView? { nil }
 
-    override init(rootViewController: UIViewController) {
-        super.init(rootViewController: rootViewController)
-        attribute()
-    }
+    let testButton = UILabel()
+    let navigationBarRightItem = UIBarButtonItem()
 
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
-
-    func attribute() {
-        view.backgroundColor = .white
-    }
-}
-
-final class TestPanModal: BaseViewController<BaseViewModel>, BasePanModalPresentable {
-    var panScrollable: UIScrollView? { nil }
+    let rightItemButton = UIImageView(image: UIImage(systemName: "eraser.fill"))
 
     override func attribute() {
+        super.attribute()
         view.backgroundColor = .white
+        testButton.text = "HELLO"
     }
 
+    override func bindToView(_ viewModel: BaseViewModel) {
+        super.bindToView(viewModel)
+
+        rightItemButton.rx.tapGesture()
+            .when(.recognized)
+            .bind(onNext: { [weak self] _ in
+                print("HELLO IOS")
+            })
+            .disposed(by: disposeBag)
+    }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        title = "HELLO"
+
+        title = "HELLo"
+        navigationBar.topItem?.title = "HELLO"
+        navigationItem.title = "HELLO"
+    }
+
+    override func layout() {
+        super.layout()
+        view.addSubview(testButton)
+        testButton.snp.makeConstraints {
+            $0.center.equalToSuperview()
+        }
+
+        let titleLabel = UILabel()
+
+        titleLabel.text = "HELLO"
+        navigationBar.addSubview(titleLabel)
+        titleLabel.snp.makeConstraints {
+            $0.center.equalToSuperview()
+        }
+
+        navigationBar.addSubview(rightItemButton)
+        rightItemButton.snp.makeConstraints {
+            $0.trailing.equalToSuperview()
+            $0.centerY.equalToSuperview()
+        }
+
     }
 }
 
