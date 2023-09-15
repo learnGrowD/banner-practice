@@ -9,7 +9,7 @@ import UIKit
 import PanModal
 import UIKit
 
-final class TestNavigationPanModal: UINavigationController, CommonPanModalPresentable {
+final class TestNavigationPanModal: UINavigationController, BasePanModalPresentable {
     var panScrollable: UIScrollView? { nil }
 
     override init(rootViewController: UIViewController) {
@@ -27,7 +27,7 @@ final class TestNavigationPanModal: UINavigationController, CommonPanModalPresen
     }
 }
 
-final class TestPanModal: BaseViewController<BaseViewModel>, CommonPanModalPresentable {
+final class TestPanModal: BaseViewController<BaseViewModel>, BasePanModalPresentable {
     var panScrollable: UIScrollView? { nil }
 
     override func attribute() {

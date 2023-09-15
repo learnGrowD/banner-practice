@@ -1,5 +1,5 @@
 //
-//  CommonPanModalPresentable.swift
+//  BasePanModalPresentable.swift
 //  Banner-practice
 //
 //  Created by 도학태 on 2023/09/15.
@@ -7,8 +7,8 @@
 
 import Foundation
 import PanModal
-protocol CommonPanModalPresentable: PanModalPresentable {}
-extension CommonPanModalPresentable {
+protocol BasePanModalPresentable: PanModalPresentable {}
+extension BasePanModalPresentable {
     var showDragIndicator: Bool {
         return false
     }
