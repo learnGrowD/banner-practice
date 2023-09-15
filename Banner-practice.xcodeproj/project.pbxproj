@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		07555D509F02077CB7D4CAB6 /* Pods_Banner_practice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E918A3E773E5F643419610AB /* Pods_Banner_practice.framework */; };
+		B826A4292AB439FF00B85DF5 /* CommonPanModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B826A4282AB439FF00B85DF5 /* CommonPanModal.swift */; };
+		B826A42B2AB4446100B85DF5 /* BaseNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B826A42A2AB4446100B85DF5 /* BaseNavigationViewController.swift */; };
 		B83230872AA99ADB0058EFCD /* AnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83230862AA99ADB0058EFCD /* AnimationViewController.swift */; };
 		B832308A2AA99B0B0058EFCD /* AnimationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83230892AA99B0B0058EFCD /* AnimationViewModel.swift */; };
 		B832308D2AA9A3710058EFCD /* AnimateItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B832308C2AA9A3710058EFCD /* AnimateItemTableViewCell.swift */; };
@@ -40,7 +42,6 @@
 		B86855EB2AA6ACDF000B65FC /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86855EA2AA6ACDF000B65FC /* SplashViewController.swift */; };
 		B86855ED2AA6ACFE000B65FC /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86855EC2AA6ACFE000B65FC /* SplashViewModel.swift */; };
 		B86855EF2AA6F321000B65FC /* BaseViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86855EE2AA6F321000B65FC /* BaseViewControllerProtocol.swift */; };
-		B86855F32AA6F394000B65FC /* BaseBottomModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86855F22AA6F394000B65FC /* BaseBottomModal.swift */; };
 		B86855F62AA6F755000B65FC /* MyBottomModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86855F52AA6F755000B65FC /* MyBottomModal.swift */; };
 		B86855F82AA6F77C000B65FC /* MyBottomModalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86855F72AA6F77C000B65FC /* MyBottomModalViewModel.swift */; };
 		B87EF21F2AAEEC24002C65A6 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87EF21E2AAEEC24002C65A6 /* R.generated.swift */; };
@@ -71,6 +72,8 @@
 /* Begin PBXFileReference section */
 		35D2A4A3D7CD66E506B6956E /* Pods-Banner-practice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Banner-practice.debug.xcconfig"; path = "Target Support Files/Pods-Banner-practice/Pods-Banner-practice.debug.xcconfig"; sourceTree = "<group>"; };
 		581F9DCCCB3FF8C5A66FE4D1 /* Pods-Banner-practice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Banner-practice.release.xcconfig"; path = "Target Support Files/Pods-Banner-practice/Pods-Banner-practice.release.xcconfig"; sourceTree = "<group>"; };
+		B826A4282AB439FF00B85DF5 /* CommonPanModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonPanModal.swift; sourceTree = "<group>"; };
+		B826A42A2AB4446100B85DF5 /* BaseNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationViewController.swift; sourceTree = "<group>"; };
 		B83230862AA99ADB0058EFCD /* AnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationViewController.swift; sourceTree = "<group>"; };
 		B83230892AA99B0B0058EFCD /* AnimationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationViewModel.swift; sourceTree = "<group>"; };
 		B832308C2AA9A3710058EFCD /* AnimateItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateItemTableViewCell.swift; sourceTree = "<group>"; };
@@ -103,7 +106,6 @@
 		B86855EA2AA6ACDF000B65FC /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		B86855EC2AA6ACFE000B65FC /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		B86855EE2AA6F321000B65FC /* BaseViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewControllerProtocol.swift; sourceTree = "<group>"; };
-		B86855F22AA6F394000B65FC /* BaseBottomModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseBottomModal.swift; sourceTree = "<group>"; };
 		B86855F52AA6F755000B65FC /* MyBottomModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBottomModal.swift; sourceTree = "<group>"; };
 		B86855F72AA6F77C000B65FC /* MyBottomModalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBottomModalViewModel.swift; sourceTree = "<group>"; };
 		B87EF21E2AAEEC24002C65A6 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
@@ -347,7 +349,8 @@
 			children = (
 				B85A8B392AB2D3C100A6D50F /* BasePagerViewController.swift */,
 				B88427A02AA19CD600C6345F /* BaseViewController.swift */,
-				B86855F22AA6F394000B65FC /* BaseBottomModal.swift */,
+				B826A4282AB439FF00B85DF5 /* CommonPanModal.swift */,
+				B826A42A2AB4446100B85DF5 /* BaseNavigationViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -669,6 +672,7 @@
 				B86855F82AA6F77C000B65FC /* MyBottomModalViewModel.swift in Sources */,
 				B86855F62AA6F755000B65FC /* MyBottomModal.swift in Sources */,
 				B87EF21F2AAEEC24002C65A6 /* R.generated.swift in Sources */,
+				B826A4292AB439FF00B85DF5 /* CommonPanModal.swift in Sources */,
 				B87EF22E2AAEF2D0002C65A6 /* CommonLoadingView.swift in Sources */,
 				B86855ED2AA6ACFE000B65FC /* SplashViewModel.swift in Sources */,
 				B862DC942AA074D900E3E3BC /* MainBannerItemAttribute.swift in Sources */,
@@ -703,7 +707,6 @@
 				B85A8B4A2AB2D5B600A6D50F /* TestChildBetaViewModel.swift in Sources */,
 				B86855E82AA5B1B2000B65FC /* BaseViewControllerLifeCycleStatus.swift in Sources */,
 				B85A8B482AB2D59A00A6D50F /* TestChildBetaViewController.swift in Sources */,
-				B86855F32AA6F394000B65FC /* BaseBottomModal.swift in Sources */,
 				B87EF22C2AAEF08C002C65A6 /* Lottie.swift in Sources */,
 				B855A19B2AAAEB3200C8AC65 /* AnimateNavigationBackgroundView.swift in Sources */,
 				B855A1992AAAE5CA00C8AC65 /* AnimateThumbnailView.swift in Sources */,
@@ -716,6 +719,7 @@
 				B8AE127D2AB06A0A0074298E /* RetryEnableProtocol.swift in Sources */,
 				B85A8B242AB2A79D00A6D50F /* StorageProtocol.swift in Sources */,
 				B84FE2E12AA809A600184D78 /* Rx+extension.swift in Sources */,
+				B826A42B2AB4446100B85DF5 /* BaseNavigationViewController.swift in Sources */,
 				B85A8B462AB2D54700A6D50F /* TestChildAlphaViewModel.swift in Sources */,
 				B85A8B3A2AB2D3C100A6D50F /* BasePagerViewController.swift in Sources */,
 			);

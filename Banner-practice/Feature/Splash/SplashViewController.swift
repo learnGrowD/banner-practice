@@ -31,9 +31,8 @@ final class SplashViewController: BaseViewController<SplashViewModel>, RetryEnab
         button.rx.tapGesture()
             .when(.recognized)
             .bind(onNext: { [weak self] _ in
-                let viewController = TestMainViewController(viewModel: BaseViewModel())
-                viewController.modalPresentationStyle = .fullScreen
-                self?.present(viewController, animated: true)
+                let rootViewController = TestPanModal(viewModel: BaseViewModel())
+                self?.presentPanModal(rootViewController)
             })
             .disposed(by: disposeBag)
 
