@@ -6,11 +6,6 @@
 //
 
 import UIKit
-import RxSwift
-import RxCocoa
-import XLPagerTabStrip
-
-
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     

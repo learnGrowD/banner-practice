@@ -33,14 +33,8 @@ final class AnimationViewController: BaseViewController<AnimationViewModel> {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("🧊 Animate ViewDidLoad" + String(describing: continerViewController))
         test = CommonBlurView()
         test?.show()
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        print("🧊 Animate viewWillAppear" + String(describing: continerViewController))
     }
 
     override func attribute() {

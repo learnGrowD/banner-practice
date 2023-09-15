@@ -14,4 +14,5 @@ class CommonRepository {
     private init() {}
 
     let judgeViewController = BehaviorRelay<UIViewController?>(value: nil)
+
 }

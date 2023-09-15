@@ -31,9 +31,9 @@ final class SplashViewController: BaseViewController<SplashViewModel>, RetryEnab
         button.rx.tapGesture()
             .when(.recognized)
             .bind(onNext: { [weak self] _ in
-                let viewModel = AnimationViewModel()
-                let vc = AnimationViewController(viewModel: viewModel)
-                self?.navigationController?.pushViewController(vc, animated: true)
+                let viewController = TestMainViewController(viewModel: BaseViewModel())
+                viewController.modalPresentationStyle = .fullScreen
+                self?.present(viewController, animated: true)
             })
             .disposed(by: disposeBag)
 
@@ -46,20 +46,9 @@ final class SplashViewController: BaseViewController<SplashViewModel>, RetryEnab
 //            .disposed(by: disposeBag)
     }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        print("🧊 Splash viewDidLoad" + String(describing: continerViewController))
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        print("🧊 Splash viewWillAppear" + String(describing: continerViewController))
-
-    }
-
     override func attribute() {
         super.attribute()
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBlue
         button.text = "화면전환"
         emptyView.setEmptyName(name: "이것이 empty다")
     }

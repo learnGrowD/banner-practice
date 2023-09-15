@@ -52,55 +52,13 @@ extension StorageProtocol {
         return topMostViewController
     }
 
-    var continerViewController: UIViewController? {
-        var depthViewController = commonRepository.judgeViewController.value
-
-        /*
-         TabBar
-         */
-        if let tabBarController = depthViewController as? UITabBarController {
-            depthViewController = tabBarController
-        }
-
-        /*
-         Navigation
-         */
-        if let navigationController = depthViewController as? UINavigationController {
-            depthViewController = navigationController
-        }
-
-        /*
-         XLPager
-         */
-        if let pagerTapViewController = depthViewController as? ButtonBarPagerTabStripViewController {
-            depthViewController = pagerTapViewController
-        }
-
-        return depthViewController
-    }
     var depthViewController: UIViewController? {
         var depthViewController = commonRepository.judgeViewController.value
+        //UIViewController, TabBar는 큰 컨테이너 개념이기 때문에 Pass
 
-        /*
-         TabBar
-         */
-        if let tabBarController = depthViewController as? UITabBarController {
-            depthViewController = tabBarController.selectedViewController
-        }
-
-        /*
-         Navigation
-         */
-        if let navigationController = depthViewController as? UINavigationController {
-            depthViewController = navigationController.visibleViewController
-        }
-
-        /*
-         XLPager
-         */
-        if let pagerTapViewController = depthViewController as? ButtonBarPagerTabStripViewController {
-            let currentIndex = pagerTapViewController.currentIndex
-            depthViewController = pagerTapViewController.viewControllers[currentIndex]
+        //XLPager 작은 container 개념으로 본다
+        if let pagerViewController = depthViewController as? ButtonBarPagerTabStripViewController {
+            depthViewController = pagerViewController
         }
 
         return depthViewController

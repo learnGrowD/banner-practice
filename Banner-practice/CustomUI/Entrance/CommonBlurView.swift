@@ -61,6 +61,7 @@ final class CommonBlurView: UIView, EntroViewProtocol {
     }
 
     private func attribute() {
+        layer.zPosition = CGFloat(Float.greatestFiniteMagnitude)
         isHidden = true
         backgroundColor = UIColor("#212121")
     }

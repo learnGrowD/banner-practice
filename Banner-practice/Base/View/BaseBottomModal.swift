@@ -10,7 +10,7 @@ import PanModal
 import RxSwift
 import RxCocoa
 
-class BaseBottomModal<ViewModel: BaseViewModel>: UIViewController, BaseViewControllerProtocol {
+class BaseBottomModal<ViewModel: BaseViewModel>: UINavigationController, BaseViewControllerProtocol {
     typealias ViewModel = ViewModel
 
     var viewModel: ViewModel
@@ -113,16 +113,24 @@ extension BaseBottomModal: PanModalPresentable {
         return false
     }
 
+    var springDamping: CGFloat {
+        return 1.0
+    }
+    
+    var topOffset: CGFloat {
+        return 0.0
+    }
+
     var panScrollable: UIScrollView? {
         return nil
     }
 
     var shortFormHeight: PanModalHeight {
-        return .maxHeightWithTopInset(0)
+        return .maxHeight
     }
 
     var longFormHeight: PanModalHeight {
-        return .maxHeightWithTopInset(0)
+        return .maxHeight
     }
     var anchorModalToLongForm: Bool {
         return false

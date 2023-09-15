@@ -37,7 +37,7 @@ extension BaseViewControllerProtocol {
         /*
          judgeViewController 넣어주기
          */
-        commonRepository.judgeViewController.accept(self)
+        acceptJudgeViewController(value: self)
 
         layout()
         bindToView(viewModel)
@@ -50,7 +50,8 @@ extension BaseViewControllerProtocol {
         /*
          judgeViewController 넣어주기
          */
-        commonRepository.judgeViewController.accept(self)
+        acceptJudgeViewController(value: self)
+
         print("🍎 viewWillAppear: \(className)")
     }
     func mViewDidAppear(_ animated: Bool) {
@@ -66,10 +67,6 @@ extension BaseViewControllerProtocol {
         print("🍎 viewDidLayoutSubviews: \(className)")
     }
     func mViewWillDisappear(_ animated: Bool) {
-        /*
-         judgeViewController 해제
-         */
-        commonRepository.judgeViewController.accept(nil)
         viewModel.lifeCycleStatus.accept(.viewWillDisAppear)
         print("🍎 viewWillDisappear: \(className)")
     }
@@ -80,5 +77,15 @@ extension BaseViewControllerProtocol {
     func mDeinit() {
         viewModel.lifeCycleStatus.accept(.mDeinit)
         print("🍎 ViewController deinit: \(className)")
+    }
+}
+
+extension BaseViewControllerProtocol {
+    func acceptJudgeViewController(value: UIViewController?) {
+        //XLPager의 자식이 아닌 다른 ViewController에서는 depthViewController를 업데이트 시켜준다.
+        if !(self is UIViewController & IndicatorInfoProvider) {
+            commonRepository.judgeViewController.accept(value)
+            print("🧊 accept depthViewController: \(String(describing: value.self))")
+        }
     }
 }
