@@ -10,6 +10,8 @@
 		07555D509F02077CB7D4CAB6 /* Pods_Banner_practice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E918A3E773E5F643419610AB /* Pods_Banner_practice.framework */; };
 		B826A4292AB439FF00B85DF5 /* CommonPanModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B826A4282AB439FF00B85DF5 /* CommonPanModal.swift */; };
 		B826A42B2AB4446100B85DF5 /* BaseNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B826A42A2AB4446100B85DF5 /* BaseNavigationViewController.swift */; };
+		B826A42E2AB4542800B85DF5 /* CommonWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B826A42D2AB4542800B85DF5 /* CommonWebViewController.swift */; };
+		B826A4302AB4543800B85DF5 /* CommonWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B826A42F2AB4543800B85DF5 /* CommonWebView.swift */; };
 		B83230872AA99ADB0058EFCD /* AnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83230862AA99ADB0058EFCD /* AnimationViewController.swift */; };
 		B832308A2AA99B0B0058EFCD /* AnimationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83230892AA99B0B0058EFCD /* AnimationViewModel.swift */; };
 		B832308D2AA9A3710058EFCD /* AnimateItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B832308C2AA9A3710058EFCD /* AnimateItemTableViewCell.swift */; };
@@ -72,6 +74,8 @@
 		581F9DCCCB3FF8C5A66FE4D1 /* Pods-Banner-practice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Banner-practice.release.xcconfig"; path = "Target Support Files/Pods-Banner-practice/Pods-Banner-practice.release.xcconfig"; sourceTree = "<group>"; };
 		B826A4282AB439FF00B85DF5 /* CommonPanModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonPanModal.swift; sourceTree = "<group>"; };
 		B826A42A2AB4446100B85DF5 /* BaseNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationViewController.swift; sourceTree = "<group>"; };
+		B826A42D2AB4542800B85DF5 /* CommonWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonWebViewController.swift; sourceTree = "<group>"; };
+		B826A42F2AB4543800B85DF5 /* CommonWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonWebView.swift; sourceTree = "<group>"; };
 		B83230862AA99ADB0058EFCD /* AnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationViewController.swift; sourceTree = "<group>"; };
 		B83230892AA99B0B0058EFCD /* AnimationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationViewModel.swift; sourceTree = "<group>"; };
 		B832308C2AA9A3710058EFCD /* AnimateItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateItemTableViewCell.swift; sourceTree = "<group>"; };
@@ -151,6 +155,15 @@
 				581F9DCCCB3FF8C5A66FE4D1 /* Pods-Banner-practice.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		B826A42C2AB4541A00B85DF5 /* Web */ = {
+			isa = PBXGroup;
+			children = (
+				B826A42D2AB4542800B85DF5 /* CommonWebViewController.swift */,
+				B826A42F2AB4543800B85DF5 /* CommonWebView.swift */,
+			);
+			path = Web;
 			sourceTree = "<group>";
 		};
 		B83230882AA99AF60058EFCD /* Animation */ = {
@@ -473,6 +486,7 @@
 		B8BA39612AA064FF00F4B4F9 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				B826A42C2AB4541A00B85DF5 /* Web */,
 				B85A8B272AB2BE8F00A6D50F /* Test */,
 				B83230882AA99AF60058EFCD /* Animation */,
 				B86855E92AA5D5EC000B65FC /* Splash */,
@@ -688,6 +702,7 @@
 				B85A8B312AB2C07800A6D50F /* TestPanModalViewModel.swift in Sources */,
 				B85A8B512AB2FBED00A6D50F /* TestMainViewController.swift in Sources */,
 				B88427942AA15EFE00C6345F /* UIViewController+extension.swift in Sources */,
+				B826A42E2AB4542800B85DF5 /* CommonWebViewController.swift in Sources */,
 				B85A8B4A2AB2D5B600A6D50F /* TestChildBetaViewModel.swift in Sources */,
 				B86855E82AA5B1B2000B65FC /* BaseViewControllerLifeCycleStatus.swift in Sources */,
 				B85A8B482AB2D59A00A6D50F /* TestChildBetaViewController.swift in Sources */,
@@ -697,6 +712,7 @@
 				B85A8B532AB2FC1D00A6D50F /* TestNFTViewController.swift in Sources */,
 				B8A7980E2AA886D100C59C93 /* MainNavigationItemContainer.swift in Sources */,
 				B86855EF2AA6F321000B65FC /* BaseViewControllerProtocol.swift in Sources */,
+				B826A4302AB4543800B85DF5 /* CommonWebView.swift in Sources */,
 				B862DC8E2AA0688100E3E3BC /* MainViewModel.swift in Sources */,
 				B85A8B422AB2D51F00A6D50F /* TestChildAlphaViewController.swift in Sources */,
 				B88AD6B72AAE9CFD008C5C16 /* CommonToast.swift in Sources */,
